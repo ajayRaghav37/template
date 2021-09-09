@@ -433,14 +433,13 @@ Private Sub Form_Load()
     Show
     MainWindow.ZOrder 0
     Resizer.Move (Screen.Width - Width) / 2, (Screen.Height - Height) / 2, Width + 30, Height + 30
-    MainWindow.Move Resizer.Left, Resizer.Top, Resizer.Width, Resizer.Height
+    MainWindow.Move Resizer.Left + 15, Resizer.Top + 15, Resizer.Width - 30, Resizer.Height - 30
     Resizer.Visible = True
     MainWindow.ZOrder 0
     lblProgramName.Caption = App.ProductName & " " & Trim(Str(App.Major)) & "." & Trim(Str(App.Minor)) & "." & Trim(Str(App.Revision))
     shpStatusBar.Height = ((Height / 5.4) + (4.7 * (19.05 - Height)) / (Height ^ 2))
     shpToolBar.Height = shpStatusBar.Height / 2
     Form_Resize
-    shpBorder.Visible = True
 End Sub
 
 Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)

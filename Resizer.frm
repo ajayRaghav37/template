@@ -48,13 +48,13 @@ Public Sub Form_Resize()
     GetWindowRect hWnd, rectWindow
     If WindowState = 0 Then
         MainWindow.shpBorder.Move 0, 0, Width - 30, Height - 30
-        MainWindow.Move Left, Top, Width, Height
+        MainWindow.Move Left + 15, Top + 15, Width - 30, Height - 30
         MainWindow.shpToolBar.Width = Width + 15
         MainWindow.shpStatusBar.Move 0, Height - MainWindow.shpStatusBar.Height + 15, Width + 15, MainWindow.shpStatusBar.Height
         MainWindow.lblTitleBar.Width = Width
     ElseIf WindowState = 2 Then
         'MainWindow.Move Left + (Width - Screen.TwipsPerPixelX * rectClient.Right + Screen.TwipsPerPixelX * rectClient.Left) / 2, Top + (Height - Screen.TwipsPerPixelY * rectClient.Bottom + Screen.TwipsPerPixelY * rectClient.Top) / 2, Width, Height
-        MainWindow.Move Screen.TwipsPerPixelX * rectClient.Left, Screen.TwipsPerPixelY * rectClient.Top, Screen.TwipsPerPixelX * (rectClient.Right - rectClient.Left), Height - 225
+        MainWindow.Move Screen.TwipsPerPixelX * rectClient.Left, Screen.TwipsPerPixelY * rectClient.Top, Screen.TwipsPerPixelX * (rectClient.Right - rectClient.Left), Height
     End If
 End Sub
 
